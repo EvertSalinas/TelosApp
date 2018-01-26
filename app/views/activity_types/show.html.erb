@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>Name:</strong>
+  <%= @activity_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @activity_type.description %>
+</p>
+
+<p>
+  <strong>Goalperday:</strong>
+  <%= @activity_type.goalperday %>
+</p>
+
+<p>
+  <strong>Measure:</strong>
+  <%= @activity_type.measure %>
+</p>
+
+
+<% if !@activity_instances.empty? %>
+  <h1>Activity Log</h1>
+
+  <table class="table table-bordered table-responsive">
+    <thead>
+      <tr class="bg-primary">
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @activity_instances.each do |activity_instance| %>
+        <tr>
+          <td><%= activity_instance.date %></td>
+          <td><%= activity_instance.amount.to_s + " " + @activity_type.measure.to_s %></td>
+          <td><%= activity_instance.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+<% else %>
+  <h2>The Activity log is Empty</h2>
+<% end %>

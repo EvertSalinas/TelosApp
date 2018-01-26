@@ -1,0 +1,30 @@
+html, body{
+    margin:0px;
+    padding:0px;
+}
+
+$navbar-default-bg: #000000;
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #FFF;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 1px;
+    border-top: 1px solid #000000;
+    color: #000000;
+}
+
+.table-bordered th{
+    background: #000000;
+    color: #FFFFFF;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";

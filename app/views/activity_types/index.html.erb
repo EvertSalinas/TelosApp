@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+      <h1>Activity Types</h1>
+      <table class="table table-bordered table-responsive">
+        <thead>
+          <tr class="bg-primary">
+            <th>Name</th>
+            <th>Description</th>
+            <th>Goal per day</th>
+            <th>Measure</th>
+            <th>Start Date</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @activity_types.each do |activity_type| %>
+            <tr>
+              <td><%= activity_type.name %></td>
+              <td><%= activity_type.description %></td>
+              <td><%= activity_type.goalperday %></td>
+              <td><%= activity_type.measure %></td>
+              <td><%= activity_type.created_at.to_date %></td>
+              <td><%= link_to 'Show Log', activity_type,  class: "btn btn-sm btn-default"%></td>
+              <td><%= link_to 'Edit', edit_activity_type_path(activity_type),  class: "btn btn-success btn-sm"%></td>
+              <td><%= button_to 'Destroy', activity_type, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"%></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <br>
